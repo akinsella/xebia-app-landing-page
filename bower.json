@@ -1,0 +1,24 @@
+{
+  "name": "xebia-app-landing-page",
+  "version": "1.0.0",
+  "homepage": "https://github.com/akinsella/xebia-app-landing-page",
+  "authors": [
+    "alexis.kinsella@xebia.fr"
+  ],
+  "description": "Xebia Mobile App",
+  "main": "index.html",
+  "keywords": [
+    "Xebia",
+    "Mobile",
+    "App"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
