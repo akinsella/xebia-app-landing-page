@@ -9,14 +9,12 @@
         <meta name="reply-to" content="web-admin@xebia.com"/>
         <meta name="owner" content="Xebia IT Architects"/>
 
-        <meta name="description"
-              content="Xebia is an international IT consultancy organization where craftsmanship and knowledge management are the key success factor. The company's mission is 'Authority'. We strive to be the leading company in each of our target markets: Agile Enterprise Java, BigData / Cloud / NoSQL, Web Oriented Architectures, Mobile."/>
+        <meta name="description" content="Xebia is an international IT consultancy organization where craftsmanship and knowledge management are the key success factor. The company's mission is 'Authority'. We strive to be the leading company in each of our target markets: Agile Enterprise Java, BigData / Cloud / NoSQL, Web Oriented Architectures, Mobile."/>
         <meta name="keywords" content="Xebia, Mobile, App"/>
         <meta name="content-language" content="fr"/>
         <meta name="robots" content="follow,index,all"/>
 
         <meta name="viewport" content="width=device-width">
-
 
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -27,57 +25,210 @@
 
         <link rel="stylesheet" href="styles/main.css" />
 
-        <script src="scripts/main.js"></script>
-        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/ico" href="images/favicon.ico" />
 
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+        <script src="bower_components/json2/json2.js"></script>
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <script src="bower_components/underscore/underscore-min.js"></script>
+        <script src="bower_components/backbone/backbone-min.js"></script>
+        <script src="bower_components/backbone-associations/backbone-associations-min.js"></script>
+
+        <script src="scripts/main.js"></script>
+
+        <script src="scripts/fwk.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/nav.js"></script>
+
     </head>
 
     <body>
 
-        <div id="header">
-            <div id="iphone-block">
-                <img id="iphone" src="images/iphone5.png" />
-            </div>
-            <div id="app-description">
-                <h1>Application Xebia pour iOS</h1>
-                <h2>We are a group  of passionate</h2>
-                <h2>Software development experts !</h2>
-                <div id="app-store-block">
-                    <a href=""><img id=appstore-logo" src="images/appstore.png" /></a>
+        <script>
+            $(function () {
+                window.app = new window.xebia.Application();
+                app.start();
+            });
+        </script>
+
+        <div class="content">
+
+            <div id="nav" class="nav">
+                <div class="nav-content">
+                    <a href="#app">Application</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#twitter">Twitter</a>
+                    <a href="#events">Events</a>
+                    <a href="#videos">Vidéos</a>
+                    <a href="#agile-tools">Agile tools</a>
+                    <a href="#work">Xebia</a>
+
+                    <div class="pointer"></div>
                 </div>
             </div>
-        </div>
 
-        <div id="content-1">
+            <div id="app" class="page app">
+
+                <div class="iphone">
+                    <img class="iphone" src="images/iphone5.png" />
+                </div>
+
+                <div class="xebia-logo"></div>
+
+                <div class="app-description">
+                    <h1>Application Xebia pour iOS</h1>
+                    <h2>We are a group  of <em>passionate</em> !</h2>
+                    <br />
+                    <div class="app-store">
+                        <a href="https://itunes.apple.com/app/xebia/id777338387"><img class="appstore-logo" src="images/appstore.png"/></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="blog" class="page blog">
+                <div class="blog-inner">
+                    <div class="page-description">
+                        <h1>Le <em>blog</em> de Xebia sur votre iPhone et votre iPad</h1>
+                        <ul>
+                            <li>Retrouvez-y les derniers articles, et soyez notifié dès leur publication</li>
+                            <li>Consultez facilement les articles par leurs tags et leur catégorie</li>
+                        </ul>
+                    </div>
+                    <img class="page-image" src="images/xebia-app-wordpress-blog-entry-2.png" />
+                </div>
+            </div>
+
+            <div id="twitter" class="page twitter">
+                <div class="page-description">
+                    <h1>Suivez toute l'actualité Xebia & des Xebians<br />
+                        via sa timeline <em>Twitter</em></h1>
+
+                    <div class="slogan">
+                        <h2>Tenez vous informé</h2>
+                        <h2>des infos</h2>
+                        <h2>les plus récentes!</h2>
+                    </div>
+
+                </div>
+                <img class="page-image" src="images/xebia-app-twitter.png" />
+            </div>
+
+            <div id="events" class="page events">
+                <div class="page-description">
+                    <h1>Soyez au courant des <em>événements</em> Xebia<br />
+                        avant tout le monde !</h1>
+                    <ul>
+                        <li>L'application Xebia vous informe par notification de chaque nouvel événement</li>
+                        <li>Soyez sûr de ne plus louper l'ouverture des réservations !</li>
+                    </ul>
+                </div>
+                <img class="page-image" src="images/xebia-app-event.png" />
+            </div>
+
+            <div id="videos" class="page videos">
+                <div class="page-description">
+                    <h1>Regardez les <em>vidéos</em> des événements <br />
+                        auxquels vous n'avez pas pu assiter</h1>
+
+                    <div class="passion-bubbles">
+                        <a class="software" href="http://blog.xebia.fr/tag/software-craftsmanship/" target="_blank">Software</a>
+                        <a class="craftsmanship" href="http://blog.xebia.fr/tag/software-craftsmanship/" target="_blank">craftsmanship</a>
+                        <a class="bigdata" href="http://bigdata.xebia.fr/" target="_blank">Big Data</a>
+                        <a class="cloud" href="http://blog.xebia.fr/category/nosql/" target="_blank">Cloud</a>
+                        <a class="agile" href="http://blog.xebia.fr/category/agilite/" target="_blank">Agile</a>
+                        <a class="devops" href="http://devops.xebia.fr/" target="_blank">DevOps</a>
+                        <a class="java" href="http://blog.xebia.fr/category/java-jee/" target="_blank">Java &amp;<br>friends</a>
+                        <a class="web" href="http://blog.xebia.fr/category/woa/" target="_blank">Web</a>
+                        <a class="mobility" href="http://blog.xebia.fr/category/mobilite/" target="_blank">Mobility</a>
+                    </div>
+
+                </div>
+                <img class="page-image" src="images/xebia-app-video.png" />
+            </div>
+
+            <div id="agile-tools" class="page agile-tools">
+                <div class="agile-tools-inner">
+                    <div class="page-description">
+                        <h1>Xebia Essentials</h1>
+                        <h2>Découvrez les decks de cartes <em>Xebia Essentials</em></h2>
+
+                        <ul>
+                            <li>Mindset</li>
+                            <li>Code</li>
+                            <li>Architecture and Design</li>
+                            <li>Process</li>
+                            <li>Test</li>
+                        </ul>
+                    </div>
+                    <img class="page-image" src="images/xebia-app-essentials.png" />
+                </div>
+             </div>
+
+            <div class="work" id="work">
+                <div class="work-boids">
+                </div>
+                <div class="work-content">
+                    <h2>we work here</h2>
+
+                    <address>
+                        <div class="france vcard">
+                            <h3 class="fn org">Xebia France</h3>
+                            <a href="http://www.xebia.fr" class="url"></a>
+
+                            <div>
+                        <span class="adr"><a href="http://goo.gl/maps/fY2yd" target="_blank"><span class="street-address">156 bd Haussmann</span>
+                            - <span class="postal-code">75008</span> <span class="locality">Paris</span></a></span>
+
+                                <p class="tel">+33 (0)1 53 89 99 99</p>
+
+                                <p class="tel">+33 (0)1 53 89 99 97</p>
+
+                                <p class="email">info@xebia.fr</p>
+                            </div>
+                        </div>
+                    </address>
+
+                    <div class="netherlands vcard">
+                        <div class="and">AND...</div>
+                        <h3 class="fn org"><a href="http://www.xebia.nl" target="_blank" class="url">Xebia Netherlands</a></h3>
+                        <span class="adr">
+                          <span class="street-address">Utrechtseweg 49</span> - <span class="postal-code">1213 TL</span> <span
+                                class="locality">Hilversum</span> <span class="country-name">Netherlands</span>
+                        </span>
+                    </div>
+                    <div class="india vcard">
+                        <div class="and">AND...</div>
+                        <h3 class="fn org"><a href="http://www.xebia.in" target="_blank" class="url">Xebia India</a></h3>
+                        <span class="adr">
+                          <span class="street-address">612 BPTP Park Centra - Sector 30 - Gurgaon</span> <span class="postal-code">122002</span> <span
+                                class="locality">Haryana</span>
+                        </span>
+                    </div>
+                    <div class="map">
+                    </div>
+
+                    <div class="social">
+                        <a href="https://twitter.com/XebiaFr" class="work-twitter" target="_blank"></a>
+                        <a href="http://fr.viadeo.com/fr/profile/xebia-it-architects.xebia-it-architects" class="work-viadeo"
+                           target="_blank"></a>
+                        <a href="https://plus.google.com/100396468532572979348" class="work-googleplus" target="_blank"></a>
+                        <a href="http://www.linkedin.com/company/xebia" class="work-linkedin" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="tagline-xebia"></div>
+                <div class="tagline-alliance">
+                    <a href=""><img class="logo-alliance" src="images/footer-logo-alliance.png" alt="Alliance Xebia"></a>
+                    <p>= <a href="http://www.xebia.fr/">Xebia</a> + <a href="http://xebialabs.com/">XebiaLabs</a> + <a href="http://www.thiga.fr/">Thiga</a> + <a href="http://www.ux-republic.com/">UX-Republic</a></p>
+                </div>
+            </div>
 
         </div>
-        <div id="content-2">
-
-        </div>
-        <div id="content-3">
-
-        </div>
-        <div id="content-4">
-
-        </div>
-        <div id="content-5">
-
-        </div>
-        <div id="content-6">
-
-        </div>
-        <div id="content-7">
-
-        </div>
-        <div id="content-8">
-
-        </div>
-        <div id="footer">
-            <img id="footer-tagline" src="images/footer-tagline.png">
-        </div>
-
 
         <script>
 
