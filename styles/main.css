@@ -406,18 +406,6 @@ div.page {
     right: 80px;
 }
 
-@media screen and (max-width: 1280px) {
-    .videos div.page-description {
-        width: 620px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .videos div.page-description {
-        width: 540px;
-    }
-}
-
 .videos div.page-description h1 {
     color: #444444;
     font-family: 'Ubuntu', sans-serif;
